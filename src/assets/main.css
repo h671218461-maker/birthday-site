@@ -1,0 +1,64 @@
+:root {
+  --primary-color: #ff69b4;
+  --secondary-color: #ffd700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Confetti / particle canvas */
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Heart/particle styling when using DOM-based particles fallback */
+.particle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--primary-color);
+  transform: rotate(45deg);
+  border-radius: 2px 2px 0 0;
+}
+.particle::before,
+.particle::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+.particle::before { top: -8px; left: 0; }
+.particle::after { left: 8px; top: 0; }
+
+/* page transition fallback (kept for CSS-only environments) */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* small pulse for like button */
+.pulse {
+  transform-origin: center;
+}
