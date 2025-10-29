@@ -36,15 +36,15 @@ const selectedPhoto = ref(null)
 const photos = ref([
   {
     // Vite-friendly URL for static assets
-    url: new URL('./assets/gallery/photo1.jpg', import.meta.url).href,
+    url: new URL('../assets/gallery/photo1.jpg', import.meta.url).href,
     description: '乘车静息，爱你不息'
   },
   {
-    url: new URL('./assets/gallery/photo2.jpg', import.meta.url).href,
+    url: new URL('../assets/gallery/photo2.jpg', import.meta.url).href,
     description: '迷死我了，哈哈哈哈'
   }
   ,{
-    url: new URL('./assets/gallery/photo3.jpg', import.meta.url).href,
+    url: new URL('../assets/gallery/photo3.jpg', import.meta.url).href,
     description: '生日快乐，乐乐融洽'
   }
 ])
